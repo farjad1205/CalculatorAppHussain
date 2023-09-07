@@ -6,19 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/input_number2_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="INPUT 2"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="199dp" />
+
     <EditText
         android:id="@+id/input_text_box1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberDecimal"
         android:hint="@string/placeholder"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.122" />
+        app:layout_constraintVertical_bias="0.219" />
 
     <Spinner
         android:id="@+id/operation_selection_dropdown"
@@ -43,7 +51,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <TextView
         android:id="@+id/operation_textView"
@@ -76,7 +84,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="INPUT 1"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="53dp" />
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="115dp" />
+
+    <Button
+        android:id="@+id/changeViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:text="Button Mode"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="35dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
