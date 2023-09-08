@@ -2,7 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="PineGreen">#157A6E</color>
-    <color name="ShamrockGreen">#499F68</color>
-    <color name="CambridgeBlue">#77B28C</color>
+    <color name="darkGreen">#157A6E</color>
+    <color name="green">#499F68</color>
+    <color name="lightGreen">#77B28C</color>
+    <color name="jetBlack">#0a0a0a</color>
 </resources>

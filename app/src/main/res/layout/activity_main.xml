@@ -10,9 +10,16 @@
         android:id="@+id/input_number2_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
         android:text="INPUT 2"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="199dp" />
+        android:textColor="@color/jetBlack"
+        android:textSize="@dimen/FONT_SIZE_CAPTION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.314" />
 
     <EditText
         android:id="@+id/input_text_box1"
@@ -20,24 +27,41 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/placeholder"
+        android:background="@color/green"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219" />
+        app:layout_constraintVertical_bias="0.213" />
+
+    <TextView
+        android:id="@+id/input_number1_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGreen"
+        android:text="INPUT 1"
+        android:textColor="@color/jetBlack"
+        android:textSize="@dimen/FONT_SIZE_CAPTION"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
 
     <Spinner
         android:id="@+id/operation_selection_dropdown"
         android:layout_width="229dp"
         android:layout_height="33dp"
+        android:entries="@array/operations"
+        android:dropDownSelector="@color/darkGreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.549"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.603" />
+        app:layout_constraintVertical_bias="0.555" />
 
     <EditText
         android:id="@+id/input_text_box2"
@@ -45,6 +69,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/placeholder"
+        android:background="@color/green"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,19 +84,20 @@
         android:layout_height="wrap_content"
         android:text="OPERATION"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="@dimen/FONT_SIZE_CAPTION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <TextView
         android:id="@+id/result_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="@dimen/FONT_SIZE"
+        android:text="ANSWER"
+        android:textSize="@dimen/FONT_SIZE_MAIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -80,20 +106,16 @@
         app:layout_constraintVertical_bias="0.732" />
 
     <TextView
-        android:id="@+id/input_number1_textView"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="INPUT 1"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="115dp" />
-
-    <Button
-        android:id="@+id/changeViewButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:text="Button Mode"
+        android:text="Calculator"
+        android:textSize="@dimen/FONT_SIZE_MAIN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="35dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,16 +17,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void compute(View v){
-        //on CLick
-        if(spinnerSelect == ){
-            result = input1 + input2;
+        //get the inputs from one and two then make them numbers
+        EditText input1E = findViewById(R.id.input_text_box1);
+        String input1S = input1E.toString();
+        EditText input2E = findViewById(R.id.input_text_box2);
+        String input2S = input2E.toString();
+
+        double input1 = Double.parseDouble(input1S);
+        double input2 = Double.parseDouble(input2S);
+
+        String selection = findViewById(R.id.operation_selection_dropdown);
+        double ans;
+
+
+
+        //on change
+        if(selection == "Addition"){
+            ans = input1 + input2;
+        }
+        if(selection == "Subtraction"){
+            ans = input1 - input2;
+        }
+        if(selection == "Multiplication"){
+            ans = input1 * input2;
+        }
+        if(selection == "Division"){
+            ans = input1 / input2;
+        }
+        if(selection == "Integer Division"){
+            ans = (int)(input1 / input2);
+        }
+        if(selection == "Mod"){
+            ans = input1 % input2;
         }
 
         //textView.set(result)
-    }
-
-    public void switchScreens(View v) {
-        Intent intent = new Intent(this, ButtonMode.class);
-        startActivity(intent);
     }
 }
