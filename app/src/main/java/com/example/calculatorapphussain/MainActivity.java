@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,38 +21,56 @@ public class MainActivity extends AppCompatActivity {
     public void compute(View v){
         //get the inputs from one and two then make them numbers
         EditText input1E = findViewById(R.id.input_text_box1);
-        String input1S = input1E.toString();
+        String input1S = input1E.getText().toString();
         EditText input2E = findViewById(R.id.input_text_box2);
-        String input2S = input2E.toString();
+        String input2S = input2E.getText().toString();
 
+        Log.i("input1", input1S);
+        Log.i("input2", input2S);
         double input1 = Double.parseDouble(input1S);
         double input2 = Double.parseDouble(input2S);
 
-        String selection = findViewById(R.id.operation_selection_dropdown);
-        double ans;
+        Spinner selectionSpin = findViewById(R.id.operation_selection_dropdown);
+        String selection = selectionSpin.getSelectedItem().toString();
+        double ans = 0;
+
+        //show equation
+        TextView equationTV = findViewById(R.id.equation_textView);
+        String equationString = input1S + " ";
 
 
-
-        //on change
-        if(selection == "Addition"){
+        //math
+        if(selection.equals("Addition")){
             ans = input1 + input2;
+            String ansS = ans + "";
+            equationString += "+";
+            Log.i("input4", ansS);
         }
-        if(selection == "Subtraction"){
+        if(selection.equals("Subtraction")){
             ans = input1 - input2;
+            equationString += "-";
         }
-        if(selection == "Multiplication"){
+        if(selection.equals("Multiplication")){
             ans = input1 * input2;
+            equationString += "x";
         }
-        if(selection == "Division"){
+        if(selection.equals("Division")){
             ans = input1 / input2;
+            equationString += "/";
         }
-        if(selection == "Integer Division"){
-            ans = (int)(input1 / input2);
-        }
-        if(selection == "Mod"){
+        if(selection.equals("Mod")){
             ans = input1 % input2;
+            equationString += "%";
         }
 
         //textView.set(result)
+        String ansS = ans + "";
+        Log.i("input3", ansS);
+
+        equationString += " " + input2S + " = ";
+        equationTV.setText(equationString);
+
+        TextView resultTV = findViewById(R.id.result_textView);
+        resultTV.setText(ansS);
     }
 }

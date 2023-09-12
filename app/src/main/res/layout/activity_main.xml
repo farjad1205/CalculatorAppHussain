@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mainBackground"
     tools:context=".MainActivity">
 
     <TextView
@@ -11,23 +12,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
+        android:padding="@dimen/CAPTION_PADDING"
         android:text="INPUT 2"
         android:textColor="@color/jetBlack"
         android:textSize="@dimen/FONT_SIZE_CAPTION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.273"
+        app:layout_constraintHorizontal_bias="0.276"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.314" />
+        app:layout_constraintVertical_bias="0.32" />
 
     <EditText
         android:id="@+id/input_text_box1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/green"
         android:ems="10"
         android:hint="@string/placeholder"
-        android:background="@color/green"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,6 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/lightGreen"
+        android:padding="@dimen/CAPTION_PADDING"
         android:text="INPUT 1"
         android:textColor="@color/jetBlack"
         android:textSize="@dimen/FONT_SIZE_CAPTION"
@@ -49,27 +52,27 @@
         app:layout_constraintHorizontal_bias="0.273"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.177" />
+        app:layout_constraintVertical_bias="0.179" />
 
     <Spinner
         android:id="@+id/operation_selection_dropdown"
         android:layout_width="229dp"
         android:layout_height="33dp"
-        android:entries="@array/operations"
+        android:background="@color/darkGreen"
         android:dropDownSelector="@color/darkGreen"
+        android:entries="@array/operations"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.555" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/input_text_box2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/green"
         android:ems="10"
         android:hint="@string/placeholder"
-        android:background="@color/green"
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,40 +85,75 @@
         android:id="@+id/operation_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:padding="@dimen/CAPTION_PADDING"
         android:text="OPERATION"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+
         android:textSize="@dimen/FONT_SIZE_CAPTION"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.436" />
 
     <TextView
         android:id="@+id/result_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/darkGreen"
+        android:padding="@dimen/PADDING"
         android:text="ANSWER"
+        android:textColor="@color/jetBlack"
         android:textSize="@dimen/FONT_SIZE_MAIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.732" />
+        app:layout_constraintVertical_bias="0.857" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/jetBlack"
+        android:padding="@dimen/PADDING"
         android:text="Calculator"
+        android:textColor="@color/white"
         android:textSize="@dimen/FONT_SIZE_MAIN"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.07" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="compute"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.589" />
+
+    <TextView
+        android:id="@+id/equation_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="                                      "
+        android:textSize="@dimen/FONT_SIZE_MAIN"
+        android:background="@color/lightGreen"
+        android:padding="@dimen/PADDING"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

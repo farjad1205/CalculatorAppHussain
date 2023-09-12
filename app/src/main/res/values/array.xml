@@ -5,7 +5,6 @@
         <item>Subtraction</item>
         <item>Multiplication</item>
         <item>Division</item>
-        <item>Integer Division</item>
         <item>Mod</item>
     </string-array>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <style name="input_text" parent="Widget.AppCompat.EditText">
+
+    </style>
+    <style name="spinner" parent="Widget.AppCompat.Spinner.DropDown.ActionBar">
+
+    </style>
+    <style name="caption_TextView" parent="Widget.AppCompat.TextView">
+
+    </style>
+    <style name="main_textView" parent="Widget.AppCompat.TextView">
+
+    </style>
+</resources>

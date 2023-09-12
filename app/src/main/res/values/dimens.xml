@@ -2,5 +2,6 @@
 <resources>
     <dimen name="FONT_SIZE_MAIN">25sp</dimen>
     <dimen name="FONT_SIZE_CAPTION">12sp</dimen>
-    <dimen name="padding">5dp</dimen>
+    <dimen name="PADDING">5dp</dimen>
+    <dimen name="CAPTION_PADDING">2dp</dimen>
 </resources>
