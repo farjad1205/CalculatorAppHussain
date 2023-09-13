@@ -37,30 +37,35 @@ public class MainActivity extends AppCompatActivity {
         //show equation
         TextView equationTV = findViewById(R.id.equation_textView);
         String equationString = input1S + " ";
-
+        equationTV.setText(equationString);
 
         //math
         if(selection.equals("Addition")){
             ans = input1 + input2;
             String ansS = ans + "";
             equationString += "+";
+            equationTV.setText(equationString);
             Log.i("input4", ansS);
         }
         if(selection.equals("Subtraction")){
             ans = input1 - input2;
             equationString += "-";
+            equationTV.setText(equationString);
         }
         if(selection.equals("Multiplication")){
             ans = input1 * input2;
             equationString += "x";
+            equationTV.setText(equationString);
         }
         if(selection.equals("Division")){
             ans = input1 / input2;
             equationString += "/";
+            equationTV.setText(equationString);
         }
         if(selection.equals("Mod")){
             ans = input1 % input2;
             equationString += "%";
+            equationTV.setText(equationString);
         }
 
         //textView.set(result)
