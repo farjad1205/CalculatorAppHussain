@@ -2,12 +2,15 @@
 
 <resources>
     <style name="input_text" parent="Widget.AppCompat.EditText">
-        <item name="android:background">@color/lightGreen</item>
+        <item name="android:background">@color/green</item>
         <item name="android:hint">@string/placeholder</item>
         <item name="android:inputType">numberDecimal</item>
     </style>
     <style name="spinner" parent="Widget.AppCompat.Spinner.DropDown.ActionBar">
-
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:entries">@array/operations</item>
+        <item name="android:background">@color/green</item>
+        <item name="android:dropDownSelector">@color/darkGreen</item>
     </style>
     <style name="caption_TextView" parent="Widget.AppCompat.TextView">
         <item name="android:padding">@dimen/CAPTION_PADDING</item>
