@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CalculatorAppHussain</string>
     <string name="placeholder">input here</string>
+    <string name="empty_space">                                      </string>
 </resources>
