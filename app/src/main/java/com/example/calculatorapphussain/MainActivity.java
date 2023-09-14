@@ -1,20 +1,40 @@
 package com.example.calculatorapphussain;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.material.snackbar.Snackbar;
+
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    private Spinner spin;
+    int index;
+    ConstraintLayout mainLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mainLayout = findViewById(R.id.mainLayout);
+
+        spin = findViewById(R.id.operation_selection_dropdown);
+        String[] operations =getResources().getStringArray(R.array.operations);
+
+        spin.setOnItemSelectedListener(this);
+
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), android.R.layout.simple_spinner_dropdown_item, operations);
+
+        spin.setAdapter(adapter);
     }
 
     @SuppressLint("SetTextI18n")
@@ -41,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         input2.setText("");
     }
 
-    public void compute(View v){
+    public void compute(){
         //get the inputs from one and two then make them numbers
         EditText input1E = findViewById(R.id.input_text_box1);
         String input1S = input1E.getText().toString();
@@ -50,56 +70,82 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i("input1", input1S);
         Log.i("input2", input2S);
-        double input1 = Double.parseDouble(input1S);
-        double input2 = Double.parseDouble(input2S);
+        double input1;
+        double input2;
 
-        //operation
-        Spinner spin = findViewById(R.id.operation_selection_dropdown);
-        String selection = spin.getSelectedItem().toString();
-        double ans = 0;
+        if(input1S.equals("") || input2S.equals("")){
+            //snackbar error msg
+            Log.i("farjad", "empty inputs");
+            Snackbar.make(mainLayout, "input valid numbers", Snackbar.LENGTH_SHORT).show();
+        }
+        else{
+            input1 = Double.parseDouble(input1S);
+            input2 = Double.parseDouble(input2S);
+            Log.i("farjad", input1+ " " + input2);
+            //operation
+            Spinner spin = findViewById(R.id.operation_selection_dropdown);
+            String selection = spin.getSelectedItem().toString();
+            Log.i("farjad", selection);
+            double ans = 0;
 
-        //show equation
-        TextView equationTV = findViewById(R.id.equation_textView);
-        String equationString = input1S + " ";
-        equationTV.setText(equationString);
+            //show equation
+            TextView equationTV = findViewById(R.id.equation_textView);
+            String equationString = input1S + " ";
+            equationTV.setText(equationString);
 
-        //math
-        if(selection.equals("Addition")){
-            ans = input1 + input2;
+            //math
+            if(selection.equals("Addition")){
+                ans = input1 + input2;
+                String ansS = ans + "";
+                equationString += "+";
+                equationTV.setText(equationString);
+                Log.i("input4", ansS);
+            }
+            if(selection.equals("Subtraction")){
+                ans = input1 - input2;
+                equationString += "-";
+                equationTV.setText(equationString);
+            }
+            if(selection.equals("Multiplication")){
+                ans = input1 * input2;
+                equationString += "x";
+                equationTV.setText(equationString);
+            }
+            if(selection.equals("Division")){
+                ans = input1 / input2;
+                equationString += "/";
+                equationTV.setText(equationString);
+            }
+            if(selection.equals("Mod")){
+                ans = input1 % input2;
+                equationString += "%";
+                equationTV.setText(equationString);
+            }
+
+            //textView.set(result)
             String ansS = ans + "";
-            equationString += "+";
+            Log.i("input3", ansS);
+
+            equationString += " " + input2S + " = ";
             equationTV.setText(equationString);
-            Log.i("input4", ansS);
-        }
-        if(selection.equals("Subtraction")){
-            ans = input1 - input2;
-            equationString += "-";
-            equationTV.setText(equationString);
-        }
-        if(selection.equals("Multiplication")){
-            ans = input1 * input2;
-            equationString += "x";
-            equationTV.setText(equationString);
-        }
-        if(selection.equals("Division")){
-            ans = input1 / input2;
-            equationString += "/";
-            equationTV.setText(equationString);
-        }
-        if(selection.equals("Mod")){
-            ans = input1 % input2;
-            equationString += "%";
-            equationTV.setText(equationString);
+
+            TextView resultTV = findViewById(R.id.result_textView);
+            resultTV.setText(ansS);
         }
 
-        //textView.set(result)
-        String ansS = ans + "";
-        Log.i("input3", ansS);
 
-        equationString += " " + input2S + " = ";
-        equationTV.setText(equationString);
+    }
 
-        TextView resultTV = findViewById(R.id.result_textView);
-        resultTV.setText(ansS);
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        index=i;
+        if(i != 0){
+            compute();
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+        //add a snackbar error msg
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="operations">
+        <item>Select Operation</item>
         <item>Addition</item>
         <item>Subtraction</item>
         <item>Multiplication</item>
