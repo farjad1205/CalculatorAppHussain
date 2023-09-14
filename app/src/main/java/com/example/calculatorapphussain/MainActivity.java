@@ -2,7 +2,7 @@ package com.example.calculatorapphussain;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,11 +11,34 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @SuppressLint("SetTextI18n")
+    public void clearAll(View v){
+        //clear equation box
+        TextView eqnBox = findViewById(R.id.equation_textView);
+        eqnBox.setText("________________");
+        //clear answer box
+        TextView ansBox = findViewById(R.id.result_textView);
+        ansBox.setText("________________");
+
+        //clear inputs 1 and 2
+        EditText input1 = findViewById(R.id.input_text_box1);
+        EditText input2 = findViewById(R.id.input_text_box2);
+        input1.setText("");
+        input2.setText("");
+    }
+
+    public void clearInputs(View v){
+        //clear inputs 1 and 2
+        EditText input1 = findViewById(R.id.input_text_box1);
+        EditText input2 = findViewById(R.id.input_text_box2);
+        input1.setText("");
+        input2.setText("");
     }
 
     public void compute(View v){
@@ -30,8 +53,9 @@ public class MainActivity extends AppCompatActivity {
         double input1 = Double.parseDouble(input1S);
         double input2 = Double.parseDouble(input2S);
 
-        Spinner selectionSpin = findViewById(R.id.operation_selection_dropdown);
-        String selection = selectionSpin.getSelectedItem().toString();
+        //operation
+        Spinner spin = findViewById(R.id.operation_selection_dropdown);
+        String selection = spin.getSelectedItem().toString();
         double ans = 0;
 
         //show equation

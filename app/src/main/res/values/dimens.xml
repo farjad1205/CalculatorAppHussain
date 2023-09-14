@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="FONT_SIZE_MAIN">25sp</dimen>
-    <dimen name="FONT_SIZE_CAPTION">12sp</dimen>
+    <dimen name="FONT_SIZE_CAPTION">18sp</dimen>
     <dimen name="PADDING">5dp</dimen>
     <dimen name="CAPTION_PADDING">2dp</dimen>
 </resources>
