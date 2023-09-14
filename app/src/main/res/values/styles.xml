@@ -5,6 +5,7 @@
         <item name="android:background">@color/lightGreen</item>
         <item name="android:hint">@string/placeholder</item>
         <item name="android:inputType">numberDecimal</item>
+        <item name="android:layout_margin">@dimen/margin</item>
     </style>
     <style name="spinner" parent="Widget.AppCompat.Spinner.DropDown.ActionBar">
         <item name="android:spinnerMode">dropdown</item>
@@ -12,14 +13,15 @@
         <item name="android:dropDownSelector">@color/black</item>
     </style>
     <style name="caption_TextView" parent="Widget.AppCompat.TextView">
-        <item name="android:padding">@dimen/CAPTION_PADDING</item>
+        <item name="android:padding">@dimen/caption_padding</item>
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/FONT_SIZE_CAPTION</item>
+        <item name="android:textSize">@dimen/font_size_caption</item>
         <item name="android:background">@color/green</item>
+        <item name="android:layout_margin">@dimen/margin</item>
     </style>
     <style name="main_textView" parent="Widget.AppCompat.TextView">
         <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/FONT_SIZE_MAIN</item>
-        <item name="android:padding">@dimen/PADDING</item>
+        <item name="android:textSize">@dimen/font_size_main</item>
+        <item name="android:padding">@dimen/padding</item>
     </style>
 </resources>
